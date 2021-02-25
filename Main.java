@@ -1,27 +1,29 @@
-  import java.util.scanner;
-
 class Main {
   public static void main(String[] args) {
-    System.out.println("How much time is there left until the rocket launch");
-    scanner.scan = nextInt();
-    minutesWasted();
-    addedTime();
+    rocketLaunch(5);
+    endingLine(1);
   }
-  public static void minutesWasted(int timePassed) {
-    if (timePassed == 0) {
-      System.out.println("Blast off!");
+// this is the rocket countdown that counts down until its ready to blast off 
+  public static void rocketLaunch(int n) {
+    if (n == 0) {
+      System.out.println("Blast off");
     } else {
-      System.out.println(timePassed);
-      timePassed--;
-      minutesWasted(timePassed);
+      System.out.println(n);
+      n--;
+      rocketLaunch(n);
+   }
+  } //This is the process of the rocket launching out of earth and to mars. 
+  public static void endingLine(int j){
+    if (j==0){
+      System.out.println("The lands at mars");
+    }else{
+      System.out.println("The rocket is leaves the mesosphere.");
+      System.out.println("The rocket leaves earth and is in space.");
+      System.out.println("The rocket comes across mars ");
+      System.out.println("Will the rocket land perfectly on the martian surface?");
+      System.out.println("The lands in Mars untouched!");
+      j--;
+      endingLine(j);
     }
   }
-  public static int addedTime(int timeAdded) {
-    if (timeAdded == 10) {
-      System.out.println("There is a 10 minute delay.");
-    } else {
-      return timeAdded + 1;
-
-    }
-  }
-} 
+}
